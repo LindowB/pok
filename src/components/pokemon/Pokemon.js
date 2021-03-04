@@ -111,11 +111,11 @@ export default class Pokemon extends Component {
                 return false;
             }
         }).map(stat => {
-            return `${stat.effor} ${stat.stat.name}`
+            return `${stat.effort} ${stat.stat.name
             .toLowerCase().split('-')
             .map(s => s.charAt(0)
             .toUpperCase()+ s.substring(1))
-            .join(' ');
+            .join(' ')}`;
         })
         .join(', ');
 
@@ -207,9 +207,9 @@ export default class Pokemon extends Component {
                         </div>
                         <div className="card-body">
                             <div className="row align-items-center">
-                                <div className="col-md-3">
+                                <div className="col-md-3 text-center">
                                     <img src={this.state.imageUrl}
-                                    className="card-ilg-top rounded mx-auto mt-2"></img>
+                                    className="card-ilg-top rounded mx-auto mt-2" ></img>
 
                                 </div>
                                 <div className="col-md-9">
@@ -379,10 +379,95 @@ export default class Pokemon extends Component {
                                         </div>
                                         <div className="col-md-6"><h6 className="float-left">{this.state.height} ft.</h6></div>
                                     </div>
-                                    
+                                    <div className="row">
+                                        <div className="col-md-6"><h6 className="float-right">Weight:</h6>
+                                        </div>
+                                        <div className="col-md-6"><h6 className="float-left">{this.state.weight} lbs.</h6></div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-md-6"><h6 className="float-right">Catch rate:</h6>
+                                        </div>
+                                        <div className="col-md-6"><h6 className="float-left">{this.state.catchRate} %</h6></div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-md-6"><h6 className="float-right">Gender Ratio:</h6>
+                                        </div>
+                                        <div className="col-md-6"><div className="progress">
+                                            <div className="progress-bar" role="progressbar"
+                                            style={{
+                                                width: `${this.state.genderRatioFemale}%`,
+                                                backgroundColor: `#C2185B`
+                                            }}
+                                            aria-valuenow="15"
+                                            aria-valuemin="0"
+                                            aria-valuemax="100"
+                                            >
+                                                <small>{this.state.genderRatioFemale}</small>
+
+                                            </div> 
+                                            <div className="progress-bar" role="progressbar"
+                                            style={{
+                                                width: `${this.state.genderRatioMale}%`,
+                                                backgroundColor: `#1976D2`
+                                            }}
+                                            aria-valuenow="15"
+                                            aria-valuemin="0"
+                                            aria-valuemax="100"
+                                            >
+                                                <small>{this.state.genderRatioMale}</small>
+
+                                            </div> 
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
 
                                 </div>
+                                <div className="col-md-6">
+                                    <div className="row">
+                                        <div className="col-md-6">
+                                            <h6 className="float-right">Egg groups</h6>
+                                        </div>
+                                        <div className="col-md-6">
+                                            <h6 className="float-left">{this.state.eggGroups}</h6>
+                                    </div>
+                                </div>
+                                    
+                                        <div className="row">
+                                            <div className="col-md-6">
+                                                <h6 className="float-right">Hatch Steps</h6>
+                                            </div>
+                                            <div className="col-md-6">
+                                                <h6 className="float-left">{this.state.hatchSteps}</h6>
+                                            </div>
+                                        </div>
+                                    
+                                    
+                                    <div className="row">
+                                        <div className="col-md-6">
+                                            <h6 className="float-right">Abilities</h6>
+                                        </div>
+                                        <div className="col-md-6">
+                                            <h6 className="float-left">{this.state.abilities}</h6>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                            <div className="col-md-6">
+                                                <h6 className="float-right">EVS</h6>
+                                            </div>
+                                            <div className="col-md-6">
+                                                <h6 className="float-left">{this.state.evs}</h6>
+                                            </div>
+                                        </div>
+                                    
+                                </div>
                             </div>
+
+                        </div>
+                        <div className="card-footer text-muted">
+                            Data from {' '} <a href="https://pokeapi.co" targer="_blank" className="card-link">
+                                PokeAPI.co
+                            </a>
                         </div>
 
                     </div>

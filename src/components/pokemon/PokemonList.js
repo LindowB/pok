@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default class PokemonList extends Component {
     state={
-        url : "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20",
+        url : "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=300",
         pokemon : null
     };
 
@@ -24,7 +24,7 @@ export default class PokemonList extends Component {
                     <PokemonCard name={pokemon.name} url={pokemon.url} key={pokemon.name}></PokemonCard>
                 ))}
                 
-            </div>) : (<h1>Loading pokemon</h1>)}
+            </div>) : ( <img src="load.gif" alt=""/> )}
 
         </React.Fragment>
         
